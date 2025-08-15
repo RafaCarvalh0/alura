@@ -9,3 +9,6 @@
     Blade que atua como um placeholder. O Laravel pega todo o conteúdo 
     que você coloca entre as tags de abertura e fechamento do seu componente 
     e o injeta no lugar onde o $slot está.
+
+# Para criar uma table: php artisan make:migration [nome]
+# Para executar uma table no banco de dados: php artisan make:migration [nome]

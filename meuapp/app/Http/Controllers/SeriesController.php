@@ -22,4 +22,11 @@ class SeriesController extends Controller
         return view('series.create');
     }
 
+    public function store(Request $request) {
+        $nomeSerie = $request->input('nome');
+        DB::table('series')->insert(['titulo' => $nomeSerie]);
+
+        return redirect('/series');
+    }
+
 }
