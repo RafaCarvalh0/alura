@@ -1,14 +1,27 @@
-# Para rodar o servidor: php artisan serve 
+Comandos Essenciais do Laravel
+# Para rodar o servidor de desenvolvimento:
+php artisan serve
 
-# Para criar um controller: php artisan make:controller [nome] --resource
+Geradores (make)
+# Para criar um Controller:
+php artisan make:controller NomeDoController
 
-# Para criar um component: php artisan make:component [nome]
+# Para criar um Model (que representa uma tabela):
+php artisan make:model NomeDoModel
 
+# Para criar um Component Blade:
+php artisan make:component NomeDoComponente
+
+Banco de Dados (Migrations)
+# 1. Para CRIAR o arquivo de uma nova tabela (migration):
+php artisan make:migration create_{nome_da_tabela}_table
+
+# 2. Para EXECUTAR as migrations e criar as tabelas no banco:
+php artisan migrate
+
+# Para DESFAZER a última migração:
+php artisan migrate:rollback
+
+Componentes Blade
 # O Slot Padrão ($slot):
-    O $slot é uma variável especial dentro do arquivo de um componente 
-    Blade que atua como um placeholder. O Laravel pega todo o conteúdo 
-    que você coloca entre as tags de abertura e fechamento do seu componente 
-    e o injeta no lugar onde o $slot está.
-
-# Para criar uma table: php artisan make:migration [nome]
-# Para executar uma table no banco de dados: php artisan make:migration [nome]
+O $slot é uma variável especial dentro de um componente que serve como um espaço reservado. O Laravel injeta nesse espaço todo o conteúdo que você escreve entre as tags de abertura e fechamento do componente.

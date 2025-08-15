@@ -1,20 +1,11 @@
 <?php
 
-use App\Http\Controllers\SeriesController;
+use App\Http\Controllers\SerieController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/hello', function () {
-    return 'Olá, Laravel!';
-});
-
-Route::get('/minhapagina', function () {
-    return view('minhapagina');
-});
-
-Route::get('/series', [SeriesController::class, 'index']);
-Route::get('/series/create', [SeriesController::class, 'create']);
-Route::post('/series/store', [SeriesController::class, 'store']);
+Route::get('/series/create', [SerieController::class, 'create'])->name('series.create');
+Route::post('/series', [SerieController::class, 'store'])->name('series.store');

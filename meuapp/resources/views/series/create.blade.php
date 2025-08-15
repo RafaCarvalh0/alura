@@ -1,9 +1,25 @@
 <x-layout title="Séries">
-    <form action="/series/store" method="POST">
-        <div class="mb-3">
-            <label for="nome" class="form-label">Nome da Série</label>
-            <input type="text" class="form-control" id="nome" name="nome" class="form-control" required>
+    <h1>Adicionar Nova Série</h1>
+
+    @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
         </div>
-        <button type="submit" class="btn btn-primary">Adicionar</button>
+    @endif
+
+    <form action="{{ route('series.store') }}" method="POST">
+        @csrf  
+
+        <div class="form-group">
+            <label for="nome">Nome da Série:</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+
+        <div class="form-group">
+            <label for="descricao">Descrição:</label>
+            <textarea id="descricao" name="descricao" rows="4"></textarea>
+        </div>
+
+        <button type="submit">Registrar Série</button>
     </form>
 </x-layout>
