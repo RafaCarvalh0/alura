@@ -1,0 +1,11 @@
+# Para rodar o servidor: php artisan serve 
+
+# Para criar um controller: php artisan make:controller [nome] --resource
+
+# Para criar um component: php artisan make:component [nome]
+
+# O Slot Padrão ($slot):
+    O $slot é uma variável especial dentro do arquivo de um componente 
+    Blade que atua como um placeholder. O Laravel pega todo o conteúdo 
+    que você coloca entre as tags de abertura e fechamento do seu componente 
+    e o injeta no lugar onde o $slot está.
