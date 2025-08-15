@@ -9,6 +9,8 @@ class Serie extends Model
 {
     use HasFactory;
 
+    protected $table = 'series';
+
     protected $fillable = [
         'nome',
         'descricao',
@@ -16,5 +18,4 @@ class Serie extends Model
         'updated_at',
     ];
 
-    public $timestamps = false;
 }

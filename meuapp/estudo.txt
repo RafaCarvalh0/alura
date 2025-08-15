@@ -12,16 +12,6 @@ php artisan make:model NomeDoModel
 # Para criar um Component Blade:
 php artisan make:component NomeDoComponente
 
-Banco de Dados (Migrations)
-# 1. Para CRIAR o arquivo de uma nova tabela (migration):
-php artisan make:migration create_{nome_da_tabela}_table
-
-# 2. Para EXECUTAR as migrations e criar as tabelas no banco:
-php artisan migrate
-
-# Para DESFAZER a última migração:
-php artisan migrate:rollback
-
 Componentes Blade
 # O Slot Padrão ($slot):
 O $slot é uma variável especial dentro de um componente que serve como um espaço reservado. O Laravel injeta nesse espaço todo o conteúdo que você escreve entre as tags de abertura e fechamento do componente.
