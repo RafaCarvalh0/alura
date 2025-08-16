@@ -39,6 +39,18 @@
         </div>
     @endif
 
+    @if (session('mensagem.sucesso'))
+    <div class="alert alert-success">
+        {{ session('mensagem.sucesso') }}
+    </div>
+    @endif
+
+    @if (session('mensagem.perigo'))
+    <div class="alert alert-danger">
+        {{ session('mensagem.perigo') }}
+    </div>
+    @endif
+
     {{ $slot }}
 </div>
 </body>

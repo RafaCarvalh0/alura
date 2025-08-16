@@ -5,13 +5,21 @@ use App\Http\Controllers\SeriesController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\UsersController;
 
-Route::get('/login', [LoginController::class, 'create'])->name('login');
-Route::post('/login', [LoginController::class, 'store'])->name('login.store');
-Route::post('/logout', [LoginController::class, 'destroy'])->name('logout'); // LINHA CORRIGIDA
+// Rotas de Autenticação
+Route::controller(LoginController::class)->group(function () {
+    Route::get('/login', 'create')->name('login');
+    Route::post('/login', 'store')->name('login.store');
+    Route::post('/logout', 'destroy')->name('logout');
+});
 
-Route::get('/register', [UsersController::class, 'create'])->name('users.create');
-Route::post('/register', [UsersController::class, 'store'])->name('users.store');
+// Rotas de Registro
+Route::controller(UsersController::class)->group(function () {
+    Route::get('/register', 'create')->name('users.create');
+    Route::post('/register', 'store')->name('users.store');
+});
 
+
+// Rotas Protegidas
 Route::middleware('auth')->group(function () {
     Route::get('/', function () {
         return redirect('/series');
